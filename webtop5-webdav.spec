@@ -11,9 +11,7 @@ Source3: webtop-dav
 BuildArch: noarch
 
 Requires: webtop5
-Requires: php-common
-
-BuildRequires: php-cli
+Requires: rh-php56-php-fpm, rh-php56-php-mbstring
 
 %description
 NethServer DAV implementation for WebTop 5
@@ -43,7 +41,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %config /etc/httpd/conf.d/webtop5-webdav.conf
 %config /usr/share/webtop/webdav/config.json
-%dir(-apache,apache,/var/log/webtop-dav)
+%dir %attr(-,apache,apache) /var/log/webtop-dav
 /etc/logrotate.d/webtop-dav
 /usr/share/webtop/webdav/.htaccess
 /usr/share/webtop/webdav/*

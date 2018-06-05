@@ -6,7 +6,8 @@ License: GPL
 URL: %{url_prefix}/%{name}
 Source0: https://github.com/sonicle-webtop/webtop-dav-server/archive/master.tar.gz
 Source1: webtop5-webdav.conf
-Source1: config.json
+Source2: config.json
+Source3: webtop-dav
 BuildArch: noarch
 
 Requires: webtop5
@@ -17,14 +18,21 @@ BuildRequires: php-cli
 %description
 NethServer DAV implementation for WebTop 5
 
-%prep
-%setup -n webdav
 
 %build
-mkdir -p root/usr/share/webtop/webdav/
+mkdir -p root/usr/share/webtop/
 mkdir -p root/etc/httpd/conf.d/
-tar xvzf %{SOURCE0} --exclude='.gitignore' -C root/usr/share/webtop/webdav
+mkdir -p root/var/log/webtop-dav/
+mkdir -p root/etc/logrotate.d/
+tar xvzf %{SOURCE0} --exclude='.gitignore'
+#pushd webtop-dav-server-master
+#chmod a+x ./bin/*
+#./bin/make-dav-client.sh
+#popd
+mv webtop-dav-server-master/src root/usr/share/webtop/webdav
 cp %{SOURCE1} root/etc/httpd/conf.d/
+cp %{SOURCE2} root/usr/share/webtop/webdav/
+cp %{SOURCE3} root/etc/logrotate.d/
 
 %install
 rm -rf %{buildroot}
@@ -35,6 +43,8 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %config /etc/httpd/conf.d/webtop5-webdav.conf
 %config /usr/share/webtop/webdav/config.json
+%dir(-apache,apache,/var/log/webtop-dav)
+/etc/logrotate.d/webtop-dav
 /usr/share/webtop/webdav/.htaccess
 /usr/share/webtop/webdav/*
 

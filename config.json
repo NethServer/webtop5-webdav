@@ -6,7 +6,7 @@
 	"baseUri": "/webtop-dav/server.php",
 	"log": {
 		"level": "NOTICE",
-		"file": "/var/log/webtop/dav-server.log"
+		"file": "/var/log/webtop-dav/dav-server.log"
 	},
 	"api": {
 		"baseUrl": "http://localhost:58080/webtop",

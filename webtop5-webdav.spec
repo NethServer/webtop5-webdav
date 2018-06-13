@@ -1,10 +1,12 @@
+%define wtrelease 5.2.1
+
 Summary: WebTop WebDAV integration
 Name: webtop5-webdav
 Version: 0.0.1
 Release: 1%{?dist}
 License: GPL
 URL: %{url_prefix}/%{name}
-Source0: https://github.com/sonicle-webtop/webtop-dav-server/archive/master.tar.gz
+Source0: https://github.com/sonicle-webtop/webtop-dav-server/archive/wt-%{wtrelease}.tar.gz
 Source1: webtop5-webdav.conf
 Source2: config.json
 Source3: webtop-dav
@@ -27,7 +29,7 @@ tar xvzf %{SOURCE0} --exclude='.gitignore'
 #chmod a+x ./bin/*
 #./bin/make-dav-client.sh
 #popd
-mv webtop-dav-server-master/src root/usr/share/webtop/webdav
+mv webtop-dav-server-wt-%{wtrelease}/src root/usr/share/webtop/webdav
 cp %{SOURCE1} root/etc/httpd/conf.d/
 cp %{SOURCE2} root/usr/share/webtop/webdav/
 cp %{SOURCE3} root/etc/logrotate.d/

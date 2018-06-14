@@ -1,7 +1,6 @@
 /var/log/webtop-dav/*.log {
     copytruncate
     weekly
-    rotate 52
     compress
     missingok
     create 0644 apache apache

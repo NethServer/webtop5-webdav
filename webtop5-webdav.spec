@@ -8,7 +8,6 @@ License: GPL
 URL: %{url_prefix}/%{name}
 Source0: https://github.com/sonicle-webtop/webtop-dav-server/archive/wt-%{wtrelease}.tar.gz
 Source1: webtop5-webdav.conf
-Source2: config.json
 Source3: webtop-dav
 BuildArch: noarch
 
@@ -31,7 +30,6 @@ tar xvzf %{SOURCE0} --exclude='.gitignore'
 #popd
 mv webtop-dav-server-wt-%{wtrelease}/src root/usr/share/webtop/webdav
 cp %{SOURCE1} root/etc/httpd/conf.d/
-cp %{SOURCE2} root/usr/share/webtop/webdav/
 cp %{SOURCE3} root/etc/logrotate.d/
 
 %install
@@ -42,7 +40,6 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %config /etc/httpd/conf.d/webtop5-webdav.conf
-%config /usr/share/webtop/webdav/config.json
 %dir %attr(-,apache,apache) /var/log/webtop-dav
 /etc/logrotate.d/webtop-dav
 /usr/share/webtop/webdav/.htaccess

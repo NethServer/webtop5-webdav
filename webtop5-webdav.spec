@@ -13,7 +13,7 @@ Source3: webtop-dav
 BuildArch: noarch
 
 Requires: webtop5
-Requires: rh-php56-php-fpm, rh-php56-php-mbstring
+Requires: rh-php71-php-fpm, rh-php71-php-mbstring
 
 %description
 NethServer DAV implementation for WebTop 5

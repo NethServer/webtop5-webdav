@@ -2,7 +2,7 @@
 
 Summary: WebTop WebDAV integration
 Name: webtop5-webdav
-Version: 0.0.2
+Version: 0.1.0
 Release: 1%{?dist}
 License: GPL
 URL: %{url_prefix}/%{name}
@@ -49,6 +49,11 @@ rm -rf %{buildroot}
 /usr/share/webtop/webdav/*
 
 %changelog
+* Thu Dec 13 2018 Matteo Valentini <matteo.valentini@nethesis.it> - 0.1.0-1
+-  WebTop 5.5.0 - NethServer/dev#5666
+  - httpd conf: change php fcgi listen port (php 7.1)
+  - rpm spec: switch from php 5.6 to php 7.1
+
 * Tue Jul 17 2018 Matteo Valentini <matteo.valentini@nethesis.it> - 0.0.2-1
 - WebTop 5.2.3 - NethServer/dev#5516
 

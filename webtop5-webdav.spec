@@ -1,4 +1,4 @@
-%define wtrelease 5.2.3
+%define wtrelease 5.5.1
 
 Summary: WebTop WebDAV integration
 Name: webtop5-webdav

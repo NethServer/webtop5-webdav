@@ -1,4 +1,4 @@
-%define wtrelease 5.5.1
+%define wtrelease 5.6.1
 
 Summary: WebTop WebDAV integration
 Name: webtop5-webdav
@@ -25,10 +25,6 @@ mkdir -p root/etc/httpd/conf.d/
 mkdir -p root/var/log/webtop-dav/
 mkdir -p root/etc/logrotate.d/
 tar xvzf %{SOURCE0} --exclude='.gitignore'
-#pushd webtop-dav-server-master
-#chmod a+x ./bin/*
-#./bin/make-dav-client.sh
-#popd
 mv webtop-dav-server-wt-%{wtrelease}/src root/usr/share/webtop/webdav
 cp %{SOURCE1} root/etc/httpd/conf.d/
 cp %{SOURCE2} root/usr/share/webtop/webdav/

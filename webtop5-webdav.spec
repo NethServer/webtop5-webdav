@@ -2,7 +2,7 @@
 
 Summary: WebTop WebDAV integration
 Name: webtop5-webdav
-Version: 0.1.2
+Version: 0.2.0
 Release: 1%{?dist}
 License: GPL
 URL: %{url_prefix}/%{name}
@@ -45,6 +45,9 @@ rm -rf %{buildroot}
 /usr/share/webtop/webdav/*
 
 %changelog
+* Tue Oct 01 2019 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 0.2.0-1
+- WebTop 5.7.3 - NethServer/dev#5770
+
 * Tue Mar 26 2019 Matteo Valentini <matteo.valentini@nethesis.it> - 0.1.2-1
 - WebTop 5.6.3 - NethServer/dev#5729
 

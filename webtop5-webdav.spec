@@ -2,7 +2,7 @@
 
 Summary: WebTop WebDAV integration
 Name: webtop5-webdav
-Version: 0.3.0
+Version: 1.0.0
 Release: 1%{?dist}
 License: GPL
 URL: %{url_prefix}/%{name}
@@ -45,6 +45,9 @@ rm -rf %{buildroot}
 /usr/share/webtop/webdav/*
 
 %changelog
+* Thu Feb 03 2022 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.0-1
+- WebTop: use PHP 7.3 for sabredav and z-push - NethServer/dev#6632
+
 * Thu Oct 10 2019 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 0.3.0-1
 - Webtop: broken webdav syncronization  - Bug NethServer/dev#5862
 

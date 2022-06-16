@@ -42,6 +42,7 @@ rm -rf %{buildroot}
 %dir %attr(-,apache,apache) /var/log/webtop-dav
 /etc/logrotate.d/webtop-dav
 /usr/share/webtop/webdav/.htaccess
+/usr/share/webtop/webdav/.user.ini
 /usr/share/webtop/webdav/*
 
 %changelog
